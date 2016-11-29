@@ -7,7 +7,7 @@
  */
 use yii\helpers\Url;
 ?>
-
+<div class="panel">
 <!-- 只言片语 -->
 <div class="panel-title box-title">
     <span><strong>只言片语</strong></span>
@@ -28,7 +28,7 @@ use yii\helpers\Url;
             <?php foreach ($data['feed'] as $list):?>
                 <li class="media">
                     <div class="media-left"><a href="#" rel="author" data-original-title="" title="">
-                            <img alt="" class="avatar-img" style="width:37px;height:37px;" src="<?=$list['user']['avatar']?$list['user']['avatar']:"statics/images/avatar/head.jpg"?>"/></a></div>
+                            <img alt="" class="avatar-img" style="width:37px;height:37px;" src="<?=$list['user']['avatar']?$list['user']['avatar']:Yii::$app->params['avatar']['small']?>"/></a></div>
                     <div class="media-body">
                         <div class="media-content">
                             <a href="#" ><?=$list['user']['username']?>: </a>
@@ -43,4 +43,5 @@ use yii\helpers\Url;
             <?php endforeach;?>
         </ul>
     <?php endif;?>
+</div>
 </div>
